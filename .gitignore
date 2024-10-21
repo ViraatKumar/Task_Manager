@@ -1,0 +1,24 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.pyo
+*.sqlite3
+*.db
+*.sqlite3-journal
+
+# Ignore media and static files (uncomment if needed)
+# /media/
+# /static/
+
+# Ignore migrations
+*/migrations/*.py
+!*/
