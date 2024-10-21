@@ -179,4 +179,4 @@ Response:
 }
 ```
 
-## thank you for taking the time to go through this :) <3 enjoy <3
+## thank you for taking the time to go through this :) enjoy!
