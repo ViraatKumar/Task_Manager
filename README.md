@@ -8,7 +8,6 @@ This project implements a Task Management API using Django and Django Rest Frame
 - Running the Project
 - API Endpoints
 - Sample API Requests and Responses
-- Test Credentials
 
 ## Project Setup
 
@@ -50,11 +49,11 @@ python manage.py runserver
 
 The project will now be available at http://127.0.0.1:8000/.
 
-### 5. Running the Project
+## Running the Project
 
 Once the project is set up, you can start the development server and make API requests to the following endpoints.
 
-Base URL: http://127.0.0.1:8000/api/
+- Base URL: http://127.0.0.1:8000/api/
 
 ## API Endpoints
 
@@ -72,7 +71,8 @@ Here are the available API endpoints:
    . Request: POST /api/tasks/
    . Example Input:
 
-   ```{
+   ```
+   {
    "name": "Complete project documentation",
    "description": "Finalize the API documentation for the task management app.",
    "task_type": "work",
@@ -165,14 +165,18 @@ Response:
 }
 ```
 
-5. API Overview
-   - Request: GET /api/
-   - Response:
-   ```
-   {
-   "Create Task": "/api/tasks/",
-   "Assign Task": "/api/tasks/<int:task_id>/assign/",
-   "Get Tasks for User": "/api/users/<int:user_id>/tasks/",
-   "Create User": "/api/users/"
-   }
-   ```
+### 5. API Overview
+
+- Request: GET /api/
+- Response:
+
+```
+{
+"Create Task": "/api/tasks/",
+"Assign Task": "/api/tasks/<int:task_id>/assign/",
+"Get Tasks for User": "/api/users/<int:user_id>/tasks/",
+"Create User": "/api/users/"
+}
+```
+
+## thank you for taking the time to go through this :) <3 enjoy <3
