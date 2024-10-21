@@ -4,6 +4,7 @@ from rest_framework.decorators import api_view
 from .models import Task, User
 from .serializers import TaskSerializer, UserSerializer
 from django.http import JsonResponse
+# Create Task Fields: Name - description - task_type - status
 @api_view(['POST'])
 def create_task(request):
     serializer = TaskSerializer(data=request.data)
@@ -12,12 +13,14 @@ def create_task(request):
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 @api_view(['POST'])
+# Create User: Name - email - mobile
 def create_user(request):
     serializer = UserSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+# Default page incase someone comes to base_url/api/ without any paths specified
 @api_view(["GET"])
 def default_page(request):
     api_urls = {
@@ -27,7 +30,7 @@ def default_page(request):
         'Create User': '/api/users/',
     }
     return Response(api_urls)
-
+# Assign Task to User: "users":[user_id_list]
 @api_view(['POST'])
 def assign_task(request, task_id):
     try:
@@ -46,7 +49,7 @@ def assign_task(request, task_id):
         task.save()
         return Response({'message': 'Task assigned to users'}, status=status.HTTP_200_OK)
     return Response({'error': 'No users provided'}, status=status.HTTP_400_BAD_REQUEST)
-
+# API Call contains user id which is used to get tasks asigned to this user
 @api_view(['GET'])
 def get_tasks_for_user(request, user_id):
     try:
